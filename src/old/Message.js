@@ -4,7 +4,7 @@ import { View, ViewPropTypes, StyleSheet } from 'react-native-web';
 
 import Avatar from './Avatar';
 import Bubble from './Bubble';
-import SystemMessage from '../SystemMessage';
+import SystemMessage from './SystemMessage';
 import Day from './Day';
 
 import { isSameUser, isSameDay } from '../utils';

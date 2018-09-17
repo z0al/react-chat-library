@@ -9,7 +9,7 @@ import {
 	View,
 	ViewPropTypes
 } from 'react-native-web';
-import Color from './colors';
+import Color from '../colors';
 
 export default class LoadEarlier extends React.Component {
 	renderLoading() {

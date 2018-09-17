@@ -3,7 +3,7 @@ import React from 'react';
 import { Platform, StyleSheet, TextInput } from 'react-native-web';
 
 import { MIN_COMPOSER_HEIGHT, DEFAULT_PLACEHOLDER } from './Constant';
-import Color from './Color';
+import Color from '../colors';
 
 export default class Composer extends React.Component {
 	onContentSizeChange(e) {

@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, View, ViewPropTypes } from 'react-native-web';
 
 import GiftedAvatar from './GiftedAvatar';
-import { isSameUser, isSameDay } from './utils';
+import { isSameUser, isSameDay } from '../utils';
 
 const styles = {
 	left: StyleSheet.create({

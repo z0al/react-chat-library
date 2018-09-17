@@ -7,7 +7,7 @@ import {
 	View,
 	ViewPropTypes
 } from 'react-native-web';
-import Color from './colors';
+import Color from '../colors';
 
 export default function Send({
 	text,

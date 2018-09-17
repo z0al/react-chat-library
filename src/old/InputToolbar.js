@@ -3,9 +3,9 @@ import React from 'react';
 import { StyleSheet, View, Keyboard, ViewPropTypes } from 'react-native-web';
 
 import Composer from './Composer';
-import Send from './old/Send';
+import Send from './Send';
 import Actions from './Actions';
-import Color from './colors';
+import Color from '../colors';
 
 export default class InputToolbar extends React.Component {
 	constructor(props) {

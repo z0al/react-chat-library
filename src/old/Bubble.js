@@ -11,10 +11,10 @@ import {
 
 import MessageText from './MessageText';
 import MessageImage from './MessageImage';
-import Time from './Time';
-import Color from './Color';
+import Time from '../Time';
+import Color from '../colors';
 
-import { isSameUser, isSameDay } from './utils';
+import { isSameUser, isSameDay } from '../utils';
 
 export default class Bubble extends React.PureComponent {
 	constructor(props) {

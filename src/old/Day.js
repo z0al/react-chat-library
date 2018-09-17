@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ViewPropTypes } from 'react-native-web';
 import moment from 'moment';
 
-import Color from './colors';
+import Color from '../colors';
 
 import { isSameDay } from '../utils';
 import { DATE_FORMAT } from './Constant';

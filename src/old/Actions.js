@@ -9,7 +9,7 @@ import {
 	View,
 	ViewPropTypes
 } from 'react-native-web';
-import Color from './Color';
+import Color from '../colors';
 
 export default class Actions extends React.Component {
 	constructor(props) {

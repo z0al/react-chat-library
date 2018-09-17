@@ -6,7 +6,7 @@ import { Animated, Platform, StyleSheet, View } from 'react-native-web';
 import moment from 'moment';
 import uuid from 'uuid';
 
-import * as utils from './utils';
+import * as utils from '../utils';
 import Actions from './Actions';
 import Avatar from './Avatar';
 import Bubble from './Bubble';
@@ -20,7 +20,7 @@ import LoadEarlier from './LoadEarlier';
 import Message from './Message';
 import MessageContainer from './MessageContainer';
 import Send from './Send';
-import Time from './Time';
+import Time from '../Time';
 import GiftedAvatar from './GiftedAvatar';
 
 import {
