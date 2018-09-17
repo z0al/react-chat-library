@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should compare Color with snapshot 1`] = `
+exports[`should compare Colors with snapshot 1`] = `
 Object {
   "alizarin": "#e74c3c",
   "backgroundTransparent": "transparent",

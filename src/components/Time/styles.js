@@ -1,7 +1,7 @@
 // @ts-check
 
 // Ours
-import colors from '../../colors';
+import Colors from '../../colors';
 
 const containerStyle = {
 	marginLeft: 10,
@@ -21,7 +21,7 @@ const styles = {
 			...containerStyle
 		},
 		text: {
-			color: colors.timeTextColor,
+			color: Colors.timeTextColor,
 			...textStyle
 		}
 	},
@@ -30,7 +30,7 @@ const styles = {
 			...containerStyle
 		},
 		text: {
-			color: colors.white,
+			color: Colors.white,
 			...textStyle
 		}
 	}
