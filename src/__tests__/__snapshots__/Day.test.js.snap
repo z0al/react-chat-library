@@ -1,40 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render <Day /> and compare with snapshot 1`] = `
-<View
+<div
   style={
-    Array [
-      Object {
-        "alignItems": "center",
-        "justifyContent": "center",
-        "marginBottom": 10,
-        "marginTop": 5,
-      },
-      Object {},
-    ]
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "marginBottom": 10,
+      "marginTop": 5,
+    }
   }
 >
-  <View
+  <div
     style={Object {}}
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <span
       style={
-        Array [
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#b2b2b2",
-            "fontSize": 12,
-            "fontWeight": "600",
-          },
-          Object {},
-        ]
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#b2b2b2",
+          "fontSize": 12,
+          "fontWeight": "600",
+        }
       }
     >
       INVALID DATE
-    </Text>
-  </View>
-</View>
+    </span>
+  </div>
+</div>
 `;

@@ -1,12 +1,11 @@
-import 'react-native';
 import React from 'react';
-import createComponentWithContext from '../../tests/context';
+import renderer from 'react-test-renderer';
 
-import { Day } from '../GiftedChat';
+import Day from '../components/Day';
 
 it('should render <Day /> and compare with snapshot', () => {
-  const component = createComponentWithContext(<Day />);
-  const tree = component.toJSON();
+	const component = renderer.create(<Day />);
+	const tree = component.toJSON();
 
-  expect(tree).toMatchSnapshot();
+	expect(tree).toMatchSnapshot();
 });
