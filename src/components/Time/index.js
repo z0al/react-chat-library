@@ -1,13 +1,13 @@
 // @ts-check
 
 // Packages
-import React from 'react';
-import moment from 'moment';
+const React = require('react');
+const moment = require('moment');
 
 // Ours
-import Context from './context';
-import { CSS } from './utils';
-import styles from './styles/Time';
+import Context from '../../context';
+import { CSS } from '../../utils';
+import styles from './styles';
 
 const Time = props => {
 	const { position, date, format } = props;

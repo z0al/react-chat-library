@@ -1,5 +1,7 @@
+// @ts-check
+
 // Ours
-import colors from './colors';
+import colors from '../../colors';
 
 const containerStyle = {
 	marginLeft: 10,
