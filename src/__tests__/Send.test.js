@@ -1,11 +1,11 @@
-import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { Send } from '../GiftedChat';
+import Send from '../components/Send';
 
 it('should render <Send /> and compare with snapshot', () => {
-  const tree = renderer.create(<Send />).toJSON();
+	const component = renderer.create(<Send />);
+	const tree = component.toJSON();
 
-  expect(tree).toMatchSnapshot();
+	expect(tree).toMatchSnapshot();
 });
