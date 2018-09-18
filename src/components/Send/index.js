@@ -5,7 +5,7 @@ import React from 'react';
 
 // Ours
 import { CSS } from '../../utils';
-import Context from '../../context';
+import { Context } from '../../context';
 import styles from './styles';
 
 const Send = props => (
@@ -14,7 +14,8 @@ const Send = props => (
 			// Only display the button if `alwaysShow` is set or the input text is
 			// Not empty.
 			let visibility = {};
-			if (!props.alwaysShow && ctx.input.text.trim().length <= 0) {
+
+			if (!props.alwaysShow && ctx._emptyText()) {
 				visibility = { display: 'none' };
 			}
 
@@ -23,9 +24,7 @@ const Send = props => (
 					type="button"
 					data-test-id="send"
 					style={CSS([styles.container, props.containerStyle, visibility])}
-					onClick={() => {
-						props.onSend(ctx.input.text.trim());
-					}}
+					onClick={() => ctx._send()}
 				>
 					<div>
 						{props.children || (
@@ -41,7 +40,6 @@ const Send = props => (
 );
 
 Send.defaultProps = {
-	onSend: () => {},
 	label: 'Send',
 	containerStyle: {},
 	textStyle: {},

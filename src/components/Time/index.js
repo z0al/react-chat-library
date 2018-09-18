@@ -5,7 +5,7 @@ const React = require('react');
 const moment = require('moment');
 
 // Ours
-import Context from '../../context';
+import { Context } from '../../context';
 import { CSS } from '../../utils';
 import styles from './styles';
 

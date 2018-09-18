@@ -1,10 +1,13 @@
+// @ts-check
+
+// Packages
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
 
-import Context from '../src/context';
+// Ours
+import { Context, propsToContext } from '../src/context';
 import Day from '../src/components/Day';
 import Time from '../src/components/Time';
 import Send from '../src/components/Send';
@@ -36,8 +39,13 @@ storiesOf('Time', module)
 storiesOf('Send button', module)
 	.add('Default', () => <Send />)
 	.add('Always show', () => <Send alwaysShow={true} />)
-	.add('With "foo" as input text', () => (
-		<Context.Provider value={{ input: { text: 'foo' } }}>
+	.add('With custom onSend()', () => (
+		<Context.Provider
+			value={propsToContext({
+				inputText: 'foo',
+				onSend: action('Send fired')
+			})}
+		>
 			<Send alwaysShow={true} onSend={action('clicked')} />
 		</Context.Provider>
 	));

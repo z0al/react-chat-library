@@ -6,7 +6,7 @@ const moment = require('moment');
 
 // Ours
 import { CSS } from '../../utils';
-import Context from '../../context';
+import { Context } from '../../context';
 import styles from './styles';
 
 // TODO: make sure we check isSameDay before calling this component
