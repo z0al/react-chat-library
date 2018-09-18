@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { StyleSheet, View, Keyboard, ViewPropTypes } from 'react-native-web';
 
-import Composer from './Composer';
+import Composer from '../components/Composer';
 import Send from './Send';
 import Actions from './Actions';
 import Color from '../colors';

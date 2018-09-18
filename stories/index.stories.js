@@ -11,6 +11,7 @@ import { Context, propsToContext } from '../src/context';
 import Day from '../src/components/Day';
 import Time from '../src/components/Time';
 import Send from '../src/components/Send';
+import Composer from '../src/components/Composer';
 
 storiesOf('Day', module)
 	.add('With date', () => <Day date="Sun Sep 16 13:12:32 +03 2018" />)
@@ -36,7 +37,7 @@ storiesOf('Time', module)
 		<Time date="Sun Sep 16 13:12:32 +03 2018" format="LTS" />
 	));
 
-storiesOf('Send button', module)
+storiesOf('Send', module)
 	.add('Default', () => <Send />)
 	.add('Always show', () => <Send alwaysShow={true} />)
 	.add('With custom onSend()', () => (
@@ -47,5 +48,17 @@ storiesOf('Send button', module)
 			})}
 		>
 			<Send alwaysShow={true} onSend={action('clicked')} />
+		</Context.Provider>
+	));
+
+storiesOf('Composer', module)
+	.add('Default', () => <Composer />)
+	.add('Custom onTextChange()', () => (
+		<Context.Provider
+			value={propsToContext({
+				onTextChange: action('Text Changed')
+			})}
+		>
+			<Composer />
 		</Context.Provider>
 	));
