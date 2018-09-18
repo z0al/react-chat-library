@@ -13,6 +13,7 @@ import Time from '../src/components/Time';
 import Send from '../src/components/Send';
 import Composer from '../src/components/Composer';
 import MessageText from '../src/components/MessageText';
+import MessageImage from '../src/components/MessageImage';
 
 storiesOf('Day', module)
 	.add('Default', () => <Day date="Sun Sep 16 13:12:32 +03 2018" />)
@@ -75,3 +76,7 @@ storiesOf('MessageText', module)
 			linkStyle={{ color: 'red' }}
 		/>
 	));
+
+storiesOf('MessageImage', module).add('Default', () => (
+	<MessageImage source="https://bit.ly/2xlsuvH" />
+));

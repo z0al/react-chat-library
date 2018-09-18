@@ -1,11 +1,11 @@
-import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { MessageImage } from '../GiftedChat';
+import MessageImage from '../components/MessageImage';
 
 it('should render <MessageImage /> and compare with snapshot', () => {
-  const tree = renderer.create(<MessageImage />).toJSON();
+	const component = renderer.create(<MessageImage />);
+	const tree = component.toJSON();
 
-  expect(tree).toMatchSnapshot();
+	expect(tree).toMatchSnapshot();
 });
