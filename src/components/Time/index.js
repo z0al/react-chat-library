@@ -1,37 +1,48 @@
 // @ts-check
 
 // Packages
-const React = require('react');
-const moment = require('moment');
+import React from 'react';
+import moment from 'moment';
 
 // Ours
 import { Context } from '../../context';
 import { CSS } from '../../utils';
 import styles from './styles';
 
-const Time = props => {
-	const { position, date, format } = props;
-
-	return (
-		<Context.Consumer>
-			{ctx => (
-				<div
+/**
+ * @typedef Props
+ * @property {string} date
+ * @property {string} [position]
+ * @property {object} [containerStyle]
+ * @property {object} [textStyle]
+ * @property {string} [format]
+ * @param {Props} props
+ */
+const Time = props => (
+	<Context.Consumer>
+		{ctx => (
+			<div
+				style={CSS([
+					styles[props.position].container,
+					props.containerStyle[props.position]
+				])}
+			>
+				<span
 					style={CSS([
-						styles[position].container,
-						props.containerStyle[position]
+						styles[props.position].text,
+						props.textStyle[props.position]
 					])}
 				>
-					<span style={CSS([styles[position].text, props.textStyle[position]])}>
-						{moment(date)
-							.locale(ctx.locale)
-							.format(format)}
-					</span>
-				</div>
-			)}
-		</Context.Consumer>
-	);
-};
+					{moment(props.date)
+						.locale(ctx.locale)
+						.format(props.format)}
+				</span>
+			</div>
+		)}
+	</Context.Consumer>
+);
 
+/** @type Props */
 Time.defaultProps = {
 	position: 'left',
 	date: null,

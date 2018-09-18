@@ -1,3 +1,6 @@
+// @ts-check
+
+// Packages
 import moment from 'moment';
 
 export function isSameDay(currentMessage = {}, diffMessage = {}) {

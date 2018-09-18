@@ -14,33 +14,33 @@ import Send from '../src/components/Send';
 import Composer from '../src/components/Composer';
 
 storiesOf('Day', module)
-	.add('With date', () => <Day date="Sun Sep 16 13:12:32 +03 2018" />)
-	.add('With custom style', () => (
+	.add('Default', () => <Day date="Sun Sep 16 13:12:32 +03 2018" />)
+	.add('Custom style', () => (
 		<Day
 			date="Sun Sep 16 13:12:32 +03 2018"
 			textStyle={{ color: 'red', fontStyle: 'italic' }}
 		/>
 	))
-	.add('With custom format', () => (
+	.add('Custom format', () => (
 		<Day date="Sun Sep 16 13:12:32 +03 2018" format="l" />
 	));
 
 storiesOf('Time', module)
-	.add('With date', () => <Time date="Sun Sep 16 13:12:32 +03 2018" />)
-	.add('With custom style', () => (
+	.add('Default', () => <Time date="Sun Sep 16 13:12:32 +03 2018" />)
+	.add('Custom style', () => (
 		<Time
 			date="Sun Sep 16 13:12:32 +03 2018"
 			textStyle={{ left: { color: 'red', fontStyle: 'italic' } }}
 		/>
 	))
-	.add('With custom format', () => (
+	.add('Custom format', () => (
 		<Time date="Sun Sep 16 13:12:32 +03 2018" format="LTS" />
 	));
 
 storiesOf('Send', module)
 	.add('Default', () => <Send />)
 	.add('Always show', () => <Send alwaysShow={true} />)
-	.add('With custom onSend()', () => (
+	.add('Custom onSend()', () => (
 		<Context.Provider
 			value={propsToContext({
 				inputText: 'foo',

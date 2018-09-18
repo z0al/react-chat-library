@@ -1,8 +1,8 @@
 // @ts-check
 
 // Packages
-const React = require('react');
-const moment = require('moment');
+import React from 'react';
+import moment from 'moment';
 
 // Ours
 import { CSS } from '../../utils';
@@ -11,27 +11,33 @@ import styles from './styles';
 
 // TODO: make sure we check isSameDay before calling this component
 
-const Day = props => {
-	const { format, date } = props;
-
-	return (
-		<Context.Consumer>
-			{ctx => (
-				<div style={CSS([styles.container, props.containerStyle])}>
-					<div style={props.wrapperStyle}>
-						<span style={CSS([styles.text, props.textStyle])}>
-							{moment(date)
-								.locale(ctx.locale)
-								.format(format)
-								.toUpperCase()}
-						</span>
-					</div>
+/**
+ * @typedef Props
+ * @property {string} date
+ * @property {object} [containerStyle]
+ * @property {object} [wrapperStyle]
+ * @property {object} [textStyle]
+ * @property {string} [format]
+ * @param {Props} props
+ */
+const Day = props => (
+	<Context.Consumer>
+		{ctx => (
+			<div style={CSS([styles.container, props.containerStyle])}>
+				<div style={props.wrapperStyle}>
+					<span style={CSS([styles.text, props.textStyle])}>
+						{moment(props.date)
+							.locale(ctx.locale)
+							.format(props.format)
+							.toUpperCase()}
+					</span>
 				</div>
-			)}
-		</Context.Consumer>
-	);
-};
+			</div>
+		)}
+	</Context.Consumer>
+);
 
+/** @type Props */
 Day.defaultProps = {
 	date: null,
 	containerStyle: {},

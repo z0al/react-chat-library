@@ -1,3 +1,5 @@
+// @ts-check
+
 export default {
 	defaultColor: '#b2b2b2',
 	backgroundTransparent: 'transparent',

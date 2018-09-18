@@ -1,7 +1,7 @@
 // @ts-check
 
 // Packages
-import React from 'react';
+import { createContext } from 'react';
 
 class ContextValue {
 	/**
@@ -47,6 +47,6 @@ const propsToContext = props => {
 	return new ContextValue(props);
 };
 
-const Context = React.createContext(propsToContext({}));
+const Context = createContext(propsToContext({}));
 
 export { Context, propsToContext };
