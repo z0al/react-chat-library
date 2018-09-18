@@ -12,6 +12,7 @@ import Day from '../src/components/Day';
 import Time from '../src/components/Time';
 import Send from '../src/components/Send';
 import Composer from '../src/components/Composer';
+import MessageText from '../src/components/MessageText';
 
 storiesOf('Day', module)
 	.add('Default', () => <Day date="Sun Sep 16 13:12:32 +03 2018" />)
@@ -61,4 +62,16 @@ storiesOf('Composer', module)
 		>
 			<Composer />
 		</Context.Provider>
+	));
+
+storiesOf('MessageText', module)
+	.add('Default', () => <MessageText />)
+	.add('Custom text', () => (
+		<MessageText text="Hey, check out this http://google.com, let me know what you think" />
+	))
+	.add('Custom style', () => (
+		<MessageText
+			text="Hey, check out this http://google.com, let me know what you think"
+			linkStyle={{ color: 'red' }}
+		/>
 	));

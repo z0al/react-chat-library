@@ -1,11 +1,11 @@
-import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { MessageText } from '../GiftedChat';
+import MessageText from '../components/MessageText';
 
 it('should render <MessageText /> and compare with snapshot', () => {
-  const tree = renderer.create(<MessageText />).toJSON();
+	const component = renderer.create(<MessageText />);
+	const tree = component.toJSON();
 
-  expect(tree).toMatchSnapshot();
+	expect(tree).toMatchSnapshot();
 });
