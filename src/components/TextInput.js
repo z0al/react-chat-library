@@ -21,16 +21,15 @@ const InputText = props => (
 				<div
 					className="input"
 					contentEditable={true}
-					data-test={'input-text'}
+					data-testid={'text-input'}
 					style={props.inputStyle}
 					onInput={e => {
 						const div = e.target;
 						// @ts-ignore
 						ctx._onTextChange(div.innerText);
 					}}
-				>
-					{ctx.inputText}
-				</div>
+					dangerouslySetInnerHTML={{ __html: ctx.inputText }}
+				/>
 				<style jsx>{`
 							div.container {
 								display: flex;
@@ -45,13 +44,11 @@ const InputText = props => (
 							}
 
 							div.input {
-								background: white;
-								padding: 0.2em;
+								padding: 0.15em;
 								margin: 0;
 								outline: none;
 								flex-grow: 1;
 								cursor: text;
-								line-height: 1em;
 								max-height: ${props.maxHeight}em;
 								overflow-x: hidden;
     						overflow-y: auto;

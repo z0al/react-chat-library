@@ -23,7 +23,8 @@
 		"jest": "^23.6.0",
 		"react": "^16.5.1",
 		"react-dom": "^16.5.1",
-		"react-test-renderer": "^16.5.1"
+		"react-test-renderer": "^16.5.2",
+		"react-testing-library": "^5.1.0"
 	},
 	"scripts": {
 		"start": "start-storybook -p 6006",
