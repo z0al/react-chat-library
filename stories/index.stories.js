@@ -12,6 +12,16 @@ import TextInput from '../src/components/TextInput';
 
 storiesOf('TextInput', module)
 	.add('Default', () => <TextInput />)
+	.add('Custom text', () => (
+		<Context.Provider
+			value={propsToContext({
+				inputText: 'initial input text',
+				onTextChange: action('onTextChange')
+			})}
+		>
+			<TextInput />
+		</Context.Provider>
+	))
 	.add('Custom handler', () => (
 		<Context.Provider
 			value={propsToContext({ onTextChange: action('onTextChange') })}
