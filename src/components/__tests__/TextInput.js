@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { render } from 'react-testing-library';
 
-import { Context, propsToContext } from '../../context';
+import { TextContext } from '../../contexts';
 import TextInput from '../TextInput';
 
 test('should match the snapshot', () => {
@@ -13,9 +13,9 @@ test('should match the snapshot', () => {
 test('should set initial text from Context', () => {
 	const text = 'Hello world';
 	const { getByTestId } = render(
-		<Context.Provider value={propsToContext({ inputText: text })}>
+		<TextContext.Provider value={{ text }}>
 			<TextInput />
-		</Context.Provider>
+		</TextContext.Provider>
 	);
 	expect(getByTestId('text-input').innerHTML).toEqual(text);
 });

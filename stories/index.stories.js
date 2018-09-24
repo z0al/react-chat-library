@@ -7,25 +7,30 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 // Ours
-import { Context, propsToContext } from '../src/context';
+import { TextContext } from '../src/contexts';
 import TextInput from '../src/components/TextInput';
 
 storiesOf('TextInput', module)
 	.add('Default', () => <TextInput />)
 	.add('Custom text', () => (
-		<Context.Provider
-			value={propsToContext({
-				inputText: 'initial input text',
-				onTextChange: action('onTextChange')
-			})}
+		<TextContext.Provider
+			value={{
+				text: 'initial input text',
+				send: () => {},
+				updateText: () => {}
+			}}
 		>
 			<TextInput />
-		</Context.Provider>
+		</TextContext.Provider>
 	))
 	.add('Custom handler', () => (
-		<Context.Provider
-			value={propsToContext({ onTextChange: action('onTextChange') })}
+		<TextContext.Provider
+			value={{
+				text: '',
+				send: action('Send'),
+				updateText: action('updateText')
+			}}
 		>
 			<TextInput placeholder="my placeholder" />
-		</Context.Provider>
+		</TextContext.Provider>
 	));
