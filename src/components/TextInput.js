@@ -4,72 +4,87 @@
 import React from 'react';
 
 // Ours
-import { Context } from '../context';
+import { TextContext } from '../contexts';
 
 /**
  * @typedef Props
- * @property {string} [placeholder]
- * @property {number} [maxHeight]
+ * @property {string} [placeholder]	Input placeholder
+ * @property {boolean} [sendOnEnter]	Trigger send event on enter key
+ * @property {number} [lines]	Number of visible lines without scrolling
  * @property {object} [containerStyle]
  * @property {object} [inputStyle]
  * @param {Props} props
  */
 const InputText = props => (
-	<Context.Consumer>
-		{ctx => (
-			<div className="container" style={props.containerStyle}>
-				<div
-					className="input"
-					contentEditable={true}
-					data-testid={'text-input'}
-					style={props.inputStyle}
-					onInput={e => {
-						const div = e.target;
-						// @ts-ignore
-						ctx._onTextChange(div.innerText);
-					}}
-					dangerouslySetInnerHTML={{ __html: ctx.inputText }}
-				/>
-				<style jsx>{`
-							div.container {
-								display: flex;
-								flex: 1;
-								flex-direction: column;
-								background: white;
-								box-sizing: border-box;
-								border: 1px solid lightgray;
-								margin: 5px 10px;
-								padding: 0.3em 0.6em;
-								border-radius: 21px;
-							}
+	<div className="container" style={props.containerStyle}>
+		<TextContext.Consumer>
+			{ctx => {
+				const onkey = e => {
+					// Enter key pressed without shift combination
+					if (props.sendOnEnter && e.keyCode === 13 && !e.shiftKey) {
+						console.log('send');
+						ctx.send();
+					}
+				};
 
-							div.input {
-								padding: 0.15em;
-								margin: 0;
-								outline: none;
-								flex-grow: 1;
-								cursor: text;
-								max-height: ${props.maxHeight}em;
-								overflow-x: hidden;
-    						overflow-y: auto;
-							}
+				const onchange = e => {
+					console.log('change');
+					const text = e.target.innerText;
+					ctx.updateText(text);
+				};
 
-							div.input:empty:before {
-								content: "${props.placeholder}";
-								padding: 0.2em;
-								margin: 0;
-								color: gray;
-							}
-						`}</style>
-			</div>
-		)}
-	</Context.Consumer>
+				return (
+					<div
+						className="input"
+						contentEditable={true}
+						data-testid={'text-input'}
+						style={props.inputStyle}
+						onKeyDown={onkey}
+						onInput={onchange}
+						dangerouslySetInnerHTML={{ __html: ctx.text }}
+					/>
+				);
+			}}
+		</TextContext.Consumer>
+		<style jsx>{`
+			div.container {
+				display: flex;
+				flex: 1;
+				flex-direction: column;
+				background: white;
+				box-sizing: border-box;
+				border: 1px solid lightgray;
+				margin: 5px 10px;
+				padding: 0.3em 0.6em;
+				border-radius: 21px;
+			}
+
+			div.input {
+				padding: 0.15em;
+				margin: 0;
+				outline: none;
+				flex-grow: 1;
+				cursor: text;
+				max-height: ${props.lines}em;
+				overflow-x: hidden;
+				overflow-y: auto;
+			}
+
+			div.input:empty:before {
+				content: "${props.placeholder}";
+				padding: 0.2em;
+				margin: 0;
+				color: gray;
+			}
+		`}</style>
+	</div>
 );
 
 /** @type Props */
 InputText.defaultProps = {
 	placeholder: 'Type a message',
-	maxHeight: 5,
+	sendOnEnter: true,
+	lines: 5,
 	containerStyle: {},
 	inputStyle: {}
 };
