@@ -22,15 +22,12 @@ const InputText = props => (
 				const onkey = e => {
 					// Enter key pressed without shift combination
 					if (props.sendOnEnter && e.keyCode === 13 && !e.shiftKey) {
-						console.log('send');
 						ctx.send();
 					}
 				};
 
 				const onchange = e => {
-					console.log('change');
-					const text = e.target.innerText;
-					ctx.updateText(text);
+					ctx.updateText(e.target.innerText);
 				};
 
 				return (
@@ -56,7 +53,7 @@ const InputText = props => (
 				border: 1px solid lightgray;
 				margin: 5px 10px;
 				padding: 0.3em 0.6em;
-				border-radius: 21px;
+				border-radius: 5px;
 			}
 
 			div.input {

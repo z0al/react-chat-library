@@ -2,11 +2,11 @@
 
 exports[`should match the snapshot 1`] = `
 <div
-  className="jsx-3487411988 container"
+  className="jsx-2131215912 container"
   style={Object {}}
 >
   <div
-    className="jsx-3487411988 input"
+    className="jsx-2131215912 input"
     contentEditable={true}
     dangerouslySetInnerHTML={
       Object {
