@@ -2,21 +2,19 @@
 
 exports[`should match the snapshot 1`] = `
 <div
-  className="jsx-2131215912 container"
+  className="jsx-2974810480"
   style={Object {}}
 >
-  <div
-    className="jsx-2131215912 input"
-    contentEditable={true}
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "",
-      }
-    }
+  <textarea
+    className="jsx-2974810480"
     data-testid="text-input"
-    onInput={[Function]}
+    defaultValue=""
+    onChange={[Function]}
     onKeyDown={[Function]}
+    placeholder="Type a message"
+    rows={1}
     style={Object {}}
+    wrap="soft"
   />
 </div>
 `;
