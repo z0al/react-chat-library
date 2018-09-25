@@ -12,8 +12,4 @@ const TextContext = createContext({
 	updateText: _ => {}
 });
 
-const ConfigContext = createContext({
-	alwaysShowSend: true
-});
-
-export { TextContext, ConfigContext };
+export { TextContext };
