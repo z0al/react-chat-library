@@ -31,6 +31,7 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"autosize": "^4.0.2",
 		"moment": "^2.22.2",
 		"react-linkifier": "^4.0.0",
 		"styled-jsx": "^3.0.2",

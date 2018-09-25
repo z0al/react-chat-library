@@ -2,6 +2,7 @@
 
 // Packages
 import React from 'react';
+import resize from 'autosize';
 
 // Ours
 import { TextContext } from '../contexts';
@@ -16,7 +17,7 @@ import { TextContext } from '../contexts';
  * @param {Props} props
  */
 const InputText = props => (
-	<div className="container" style={props.containerStyle}>
+	<div style={props.containerStyle}>
 		<TextContext.Consumer>
 			{ctx => {
 				const onkey = e => {
@@ -27,24 +28,29 @@ const InputText = props => (
 				};
 
 				const onchange = e => {
-					ctx.updateText(e.target.innerText);
+					const input = e.target;
+					ctx.updateText(input.value);
+
+					// Resize based on content
+					resize(input);
 				};
 
 				return (
-					<div
-						className="input"
-						contentEditable={true}
-						data-testid={'text-input'}
+					<textarea
 						style={props.inputStyle}
+						data-testid={'text-input'}
+						wrap="soft"
+						rows={1}
+						defaultValue={ctx.text}
+						placeholder={props.placeholder}
+						onChange={onchange}
 						onKeyDown={onkey}
-						onInput={onchange}
-						dangerouslySetInnerHTML={{ __html: ctx.text }}
 					/>
 				);
 			}}
 		</TextContext.Consumer>
 		<style jsx>{`
-			div.container {
+			div {
 				display: flex;
 				flex: 1;
 				flex-direction: column;
@@ -56,22 +62,14 @@ const InputText = props => (
 				border-radius: 5px;
 			}
 
-			div.input {
-				padding: 0.15em;
+			textarea {
+				padding: 0;
 				margin: 0;
-				outline: none;
 				flex-grow: 1;
-				cursor: text;
-				max-height: ${props.lines}em;
-				overflow-x: hidden;
-				overflow-y: auto;
-			}
-
-			div.input:empty:before {
-				content: "${props.placeholder}";
-				padding: 0.2em;
-				margin: 0;
-				color: gray;
+				resize: none;
+				border: none;
+				outline: none;
+				max-height: ${props.lines * 1.2}em;
 			}
 		`}</style>
 	</div>
