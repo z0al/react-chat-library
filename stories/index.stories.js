@@ -7,45 +7,24 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 // Ours
-import { TextContext } from '../src/contexts';
-import TextInput from '../src/components/TextInput';
+import Input from '../src/components/Input';
 import Send from '../src/components/Send';
+import Composer from '../src/components/Composer';
 
-storiesOf('TextInput', module)
-	.add('Default', () => <TextInput />)
-	.add('Custom text', () => (
-		<TextContext.Provider
-			value={{
-				text: 'initial input text',
-				send: () => {},
-				updateText: () => {}
-			}}
-		>
-			<TextInput />
-		</TextContext.Provider>
-	))
+storiesOf('Input', module)
+	.add('Default', () => <Input />)
+	.add('Custom text', () => <Input text="initial input text" />)
 	.add('Custom handler', () => (
-		<TextContext.Provider
-			value={{
-				text: '',
-				send: action('Send'),
-				updateText: action('updateText')
-			}}
-		>
-			<TextInput placeholder="my placeholder" />
-		</TextContext.Provider>
+		<Input
+			onSubmit={action('Submitted')}
+			onTextChange={action('Text changed')}
+		/>
 	));
 
 storiesOf('Send', module)
 	.add('Default', () => <Send />)
-	.add('Custom handler', () => (
-		<TextContext.Provider
-			value={{
-				text: 'initial input text',
-				send: action('send'),
-				updateText: () => {}
-			}}
-		>
-			<Send />
-		</TextContext.Provider>
-	));
+	.add('Custom handler', () => <Send onSubmit={action('Submitted')} />);
+
+storiesOf('Composer', module)
+	.add('Default', () => <Composer />)
+	.add('Custom handler', () => <Composer />);
