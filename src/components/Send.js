@@ -25,22 +25,19 @@ const Send = props => (
 				<span>{props.label}</span>
 				<style jsx>{`
 					button {
-						display: flex;
-						flex: 1;
-						flex-direction: column;
+						display: block;
 						background: white;
 						box-sizing: border-box;
 						border: 1px solid lightgray;
-						margin: 5px 10px;
+						margin: 5px 0;
 						padding: 0.3em 0.6em;
 						border-radius: 5px;
 					}
 					span {
+						display: block;
 						padding: 0.15em;
 						margin: 0;
 						outline: none;
-						flex-grow: 1;
-						font-size: 1rem;
 					}
 				`}</style>
 			</button>
