@@ -4,51 +4,41 @@
 import React from 'react';
 import resize from 'autosize';
 
-// Ours
-import { TextContext } from '../contexts';
-
 /**
  * @typedef Props
+ * @property {string} [text]	Default text
  * @property {string} [placeholder]	Input placeholder
- * @property {boolean} [sendOnEnter]	Trigger send event on enter key
+ * @property {boolean} [submitOnEnter]	Trigger submit event on enter key
  * @property {number} [lines]	Number of visible lines without scrolling
  * @property {object} [containerStyle]
  * @property {object} [inputStyle]
+ * @property {function} [onSubmit]
+ * @property {function} [onTextChange]
  * @param {Props} props
  */
-const InputText = props => (
+const Input = props => (
 	<div style={props.containerStyle}>
-		<TextContext.Consumer>
-			{ctx => {
-				const onkey = e => {
-					// Enter key pressed without shift combination
-					if (props.sendOnEnter && e.keyCode === 13 && !e.shiftKey) {
-						ctx.send();
-					}
-				};
+		<textarea
+			style={props.inputStyle}
+			data-testid={'text-input'}
+			wrap="soft"
+			rows={1}
+			defaultValue={props.text}
+			placeholder={props.placeholder}
+			onChange={e => {
+				const input = e.target;
+				props.onTextChange(input.value);
 
-				const onchange = e => {
-					const input = e.target;
-					ctx.updateText(input.value);
-
-					// Resize based on content
-					resize(input);
-				};
-
-				return (
-					<textarea
-						style={props.inputStyle}
-						data-testid={'text-input'}
-						wrap="soft"
-						rows={1}
-						defaultValue={ctx.text}
-						placeholder={props.placeholder}
-						onChange={onchange}
-						onKeyDown={onkey}
-					/>
-				);
+				// Resize based on content
+				resize(input);
 			}}
-		</TextContext.Consumer>
+			onKeyDown={e => {
+				// Enter key pressed without shift combination
+				if (props.submitOnEnter && e.keyCode === 13 && !e.shiftKey) {
+					props.onSubmit();
+				}
+			}}
+		/>
 		<style jsx>{`
 			div {
 				display: flex;
@@ -76,12 +66,15 @@ const InputText = props => (
 );
 
 /** @type Props */
-InputText.defaultProps = {
+Input.defaultProps = {
+	text: '',
 	placeholder: 'Type a message',
-	sendOnEnter: true,
+	submitOnEnter: true,
 	lines: 5,
 	containerStyle: {},
-	inputStyle: {}
+	inputStyle: {},
+	onSubmit: () => {},
+	onTextChange: () => {}
 };
 
-export default InputText;
+export default Input;
