@@ -27,4 +27,11 @@ storiesOf('Send', module)
 
 storiesOf('Composer', module)
 	.add('Default', () => <Composer />)
-	.add('Custom handler', () => <Composer />);
+	.add('Custom handler', () => <Composer />)
+	.add('Custom renderer', () => (
+		<Composer
+			renderSend={props => (
+				<Send {...props} buttonStyle={{ background: 'aquamarine' }} />
+			)}
+		/>
+	));
