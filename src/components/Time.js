@@ -13,7 +13,7 @@ import { format } from 'date-fns';
  * @param {Props} props
  */
 const Time = props => (
-	<span className={props.position}>
+	<span className={props.position} style={props.style}>
 		{format(props.children, props.format)}
 		<style jsx>{`
 			span {
