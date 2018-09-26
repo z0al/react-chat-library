@@ -25,11 +25,11 @@ const Send = props => (
 		</button>
 		<style jsx>{`
 			div {
-				display: flex;
+				display: ${props.visible ? 'flex' : 'none'};
 			}
 
 			button {
-				display: ${props.visible ? 'block' : 'none'};
+				display: block;
 				background: white;
 				box-sizing: border-box;
 				border: 1px solid lightgray;
