@@ -10,6 +10,7 @@ import { action } from '@storybook/addon-actions';
 import Input from '../src/components/Input';
 import Send from '../src/components/Send';
 import Composer from '../src/components/Composer';
+import Bubble from '../src/components/Bubble';
 
 storiesOf('Input', module)
 	.add('Default', () => <Input />)
@@ -35,3 +36,7 @@ storiesOf('Composer', module)
 			)}
 		/>
 	));
+
+storiesOf('Bubble', module)
+	.add('Left', () => <Bubble />)
+	.add('Right', () => <Bubble position="right" />);
