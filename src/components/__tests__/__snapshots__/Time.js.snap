@@ -2,8 +2,8 @@
 
 exports[`should match the snapshot 1`] = `
 <span
-  className="jsx-714431048 left"
+  className="jsx-775241799 left"
 >
-  03:00
+  Invalid Date
 </span>
 `;

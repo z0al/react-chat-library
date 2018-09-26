@@ -3,8 +3,14 @@
 // Packages
 import React from 'react';
 
+// Ours
+import Text from './Text';
+import Time from './Time';
+
 /**
  * @typedef Props
+ * @property {string} text
+ * @property {string} time
  * @property {string} [position]
  * @property {{left?: any,right?: any}} [style]
  * @param {Props} props
@@ -14,6 +20,8 @@ const Bubble = props => (
 		className={`bubble ${props.position}`}
 		style={props.style[props.position]}
 	>
+		<Text position={props.position}>{props.text}</Text>
+		<Time position={props.position}>{props.time}</Time>
 		<style jsx>{`
 			div.bubble {
 				display: inline-flex;
@@ -40,6 +48,8 @@ const Bubble = props => (
 
 /** @type Props */
 Bubble.defaultProps = {
+	text: '',
+	time: '',
 	position: 'left',
 	style: {}
 };

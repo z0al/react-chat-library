@@ -10,7 +10,7 @@ import { action } from '@storybook/addon-actions';
 import Input from '../src/components/Input';
 import Send from '../src/components/Send';
 import Composer from '../src/components/Composer';
-// import Bubble from '../src/components/Bubble';
+import Bubble from '../src/components/Bubble';
 import Time from '../src/components/Time';
 import Text from '../src/components/Text';
 
@@ -39,23 +39,18 @@ storiesOf('Composer', module)
 		/>
 	));
 
-// storiesOf('Bubble', module)
-// 	.add('Left', () => <Bubble />)
-// 	.add('Right', () => <Bubble position="right" />);
+const text =
+	'Eu reprehenderit non esse qui consectetur ullamco id eu enim dolore. Tempor ex pariatur exercitation laborum officia http://nulla proident sunt excepteur reprehenderit sint. Ex ullamco ex irure eiusmod officia. Ut magna velit do sunt.com tempor eiusmod.';
+const time = 'Wed Sep 26 17:08:00 +03 2018';
+
+storiesOf('Bubble', module)
+	.add('Left', () => <Bubble text={text} time={time} />)
+	.add('Right', () => <Bubble text={text} time={time} position="right" />);
 
 storiesOf('Time', module)
-	.add('Left', () => <Time value="Wed Sep 26 16:09:43 +03 2018" />)
-	.add('Right', () => (
-		<Time value="Wed Sep 26 16:09:43 +03 2018" position="right" />
-	));
+	.add('Left', () => <Time>{time}</Time>)
+	.add('Right', () => <Time position="right">{time}</Time>);
 
 storiesOf('Text', module)
-	.add('Default', () => (
-		<Text value="Eu reprehenderit non esse qui consectetur ullamco id eu enim dolore. Tempor ex pariatur exercitation laborum officia http://nulla proident sunt excepteur reprehenderit sint. Ex ullamco ex irure eiusmod officia. Ut magna velit do sunt.com tempor eiusmod." />
-	))
-	.add('Custom style', () => (
-		<Text
-			value="Eu reprehenderit non esse qui consectetur ullamco id eu enim dolore. Tempor ex pariatur exercitation laborum officia http://nulla proident sunt excepteur reprehenderit sint. Ex ullamco ex irure eiusmod officia. Ut magna velit do sunt.com tempor eiusmod."
-			linkStyle={{ color: 'red' }}
-		/>
-	));
+	.add('Default', () => <Text position="right">{text}</Text>)
+	.add('Custom style', () => <Text linkStyle={{ color: 'red' }}>{text}</Text>);

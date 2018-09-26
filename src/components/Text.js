@@ -6,17 +6,17 @@ import { linkifier } from 'react-linkifier';
 
 /**
  * @typedef Props
- * @property {string} value
+ * @property {string} children
+ * @property {string} [position]
  * @property {object} [style]
  * @property {object} [linkStyle]
  * @param {Props} props
  */
 const Text = props => (
 	<span className="text" style={props.style}>
-		{linkifier(props.value, {
+		{linkifier(props.children, {
 			style: {
-				color: '#039be5',
-				fontSize: '1em',
+				color: props.position === 'left' ? 'white' : 'black',
 				...props.linkStyle
 			}
 		})}
@@ -25,7 +25,8 @@ const Text = props => (
 
 /** @type Props */
 Text.defaultProps = {
-	value: '',
+	position: 'left',
+	children: '',
 	style: {},
 	linkStyle: {}
 };
