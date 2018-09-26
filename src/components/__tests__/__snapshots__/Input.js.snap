@@ -2,11 +2,11 @@
 
 exports[`should match the snapshot 1`] = `
 <div
-  className="jsx-3463181146"
+  className="jsx-436285503"
   style={Object {}}
 >
   <textarea
-    className="jsx-3463181146"
+    className="jsx-436285503"
     data-testid="text-input"
     defaultValue=""
     onChange={[Function]}

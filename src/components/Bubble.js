@@ -29,18 +29,18 @@ const Bubble = props => (
 				padding: 0.5em;
 				margin: 0.5em;
 				max-width: 80%;
-				border-radius: 0.5em;
+				border-radius: 1em;
 			}
 			div.bubble.left {
 				align-self: flex-start;
 				border-top-left-radius: 0px;
-				background: #0084ff;
+				background: #f0f0f0;
 				color: white;
 			}
 			div.bubble.right {
 				align-self: flex-end;
+				background: #0084ff;
 				border-top-right-radius: 0px;
-				background: #f0f0f0;
 			}
 		`}</style>
 	</div>
