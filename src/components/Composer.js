@@ -63,7 +63,7 @@ class Composer extends React.Component {
 /** @type Props */
 Composer.defaultProps = {
 	text: '',
-	alwaysShowSend: false,
+	alwaysShowSend: true,
 	submitOnEnter: true,
 	onSubmit: () => {},
 	onTextChange: () => {}

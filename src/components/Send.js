@@ -8,19 +8,26 @@ import React from 'react';
  * @property {string} [label]
  * @property {boolean} [disabled]
  * @property {boolean} [visible]
+ * @property {object} [containerStyle]
  * @property {object} [buttonStyle]
  * @property {function} [onSubmit]
  * @param {Props} props
  */
 const Send = props => (
-	<button
-		type="button"
-		onClick={() => props.onSubmit()}
-		disabled={props.disabled}
-		style={props.buttonStyle}
-	>
-		<span>{props.label}</span>
+	<div style={props.containerStyle}>
+		<button
+			type="button"
+			onClick={() => props.onSubmit()}
+			disabled={props.disabled}
+			style={props.buttonStyle}
+		>
+			<span>{props.label}</span>
+		</button>
 		<style jsx>{`
+			div {
+				display: flex;
+			}
+
 			button {
 				display: ${props.visible ? 'block' : 'none'};
 				background: white;
@@ -30,21 +37,22 @@ const Send = props => (
 				padding: 0.3em 0.6em;
 				border-radius: 5px;
 			}
+
 			span {
 				display: block;
-				padding: 0.15em;
-				margin: 0;
 				outline: none;
+				font-size: 1.2em;
 			}
 		`}</style>
-	</button>
+	</div>
 );
 
 /** @type Props */
 Send.defaultProps = {
-	label: 'Send',
+	label: '+',
 	disabled: false,
 	visible: true,
+	containerStyle: {},
 	buttonStyle: {},
 	onSubmit: () => {}
 };
