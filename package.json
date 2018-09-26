@@ -32,9 +32,8 @@
 	},
 	"dependencies": {
 		"autosize": "^4.0.2",
-		"moment": "^2.22.2",
+		"date-fns": "^1.29.0",
 		"react-linkifier": "^4.0.0",
-		"styled-jsx": "^3.0.2",
-		"uuid": "^3.3.2"
+		"styled-jsx": "^3.0.2"
 	}
 }

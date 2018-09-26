@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match the snapshot 1`] = `
+<span
+  className="jsx-714431048 left"
+>
+  03:00
+</span>
+`;
