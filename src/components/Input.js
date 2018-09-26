@@ -43,7 +43,6 @@ const Input = props => (
 			div {
 				display: flex;
 				flex: 1;
-				flex-direction: column;
 				background: white;
 				box-sizing: border-box;
 				border: 1px solid lightgray;
