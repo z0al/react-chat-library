@@ -32,7 +32,7 @@ const Send = props => (
 				display: block;
 				background: white;
 				box-sizing: border-box;
-				border: 1px solid lightgray;
+				border: 1px solid gray;
 				margin: 5px 0;
 				padding: 0.3em 0.6em;
 				border-radius: 5px;

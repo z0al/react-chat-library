@@ -20,16 +20,15 @@ const Time = props => (
 				display: block;
 				font-size: 0.65em;
 				margin-top: 0.5em;
+				text-align: right;
 			}
 
 			span.left {
-				text-align: left;
-				color: lightgray;
+				color: gray;
 			}
 
 			span.right {
-				text-align: right;
-				color: gray;
+				color: white;
 			}
 		`}</style>
 	</span>
@@ -39,7 +38,7 @@ const Time = props => (
 Time.defaultProps = {
 	children: '',
 	position: 'left',
-	format: 'HH:mm',
+	format: 'hh:mm A',
 	style: {}
 };
 

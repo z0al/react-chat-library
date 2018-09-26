@@ -3,6 +3,10 @@
 exports[`should match the snapshot 1`] = `
 <span
   className="text"
-  style={Object {}}
+  style={
+    Object {
+      "color": "black",
+    }
+  }
 />
 `;

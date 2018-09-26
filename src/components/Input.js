@@ -45,7 +45,7 @@ const Input = props => (
 				flex: 1;
 				background: white;
 				box-sizing: border-box;
-				border: 1px solid lightgray;
+				border: 1px solid gray;
 				margin: 5px 10px;
 				padding: 0.3em 0.6em;
 				border-radius: 5px;
