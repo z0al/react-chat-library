@@ -10,7 +10,8 @@ import { action } from '@storybook/addon-actions';
 import Input from '../src/components/Input';
 import Send from '../src/components/Send';
 import Composer from '../src/components/Composer';
-import Bubble from '../src/components/Bubble';
+// import Bubble from '../src/components/Bubble';
+import Time from '../src/components/Time';
 
 storiesOf('Input', module)
 	.add('Default', () => <Input />)
@@ -37,6 +38,12 @@ storiesOf('Composer', module)
 		/>
 	));
 
-storiesOf('Bubble', module)
-	.add('Left', () => <Bubble />)
-	.add('Right', () => <Bubble position="right" />);
+// storiesOf('Bubble', module)
+// 	.add('Left', () => <Bubble />)
+// 	.add('Right', () => <Bubble position="right" />);
+
+storiesOf('Time', module)
+	.add('Left', () => <Time time="Wed Sep 26 16:09:43 +03 2018" />)
+	.add('Right', () => (
+		<Time time="Wed Sep 26 16:09:43 +03 2018" position="right" />
+	));
