@@ -24,7 +24,7 @@ const Time = props => (
 			}
 
 			span.left {
-				color: gray;
+				color: #aaa;
 			}
 
 			span.right {

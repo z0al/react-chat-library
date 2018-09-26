@@ -39,7 +39,7 @@ const Bubble = props => (
 			}
 			div.bubble.right {
 				align-self: flex-end;
-				background: #0084ff;
+				background: #007bef;
 				border-top-right-radius: 0px;
 			}
 		`}</style>

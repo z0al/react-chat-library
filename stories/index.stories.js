@@ -56,5 +56,13 @@ storiesOf('Time', module)
 	));
 
 storiesOf('Text', module)
-	.add('Default', () => <Text position="right">{text}</Text>)
+	.add('Default', () => (
+		<Text
+			position="right"
+			style={{ color: 'green' }}
+			linkStyle={{ color: 'green', fontWeight: 'bold' }}
+		>
+			{text}
+		</Text>
+	))
 	.add('Custom style', () => <Text linkStyle={{ color: 'red' }}>{text}</Text>);
