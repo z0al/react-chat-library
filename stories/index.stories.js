@@ -12,6 +12,7 @@ import Send from '../src/components/Send';
 import Composer from '../src/components/Composer';
 // import Bubble from '../src/components/Bubble';
 import Time from '../src/components/Time';
+import Text from '../src/components/Text';
 
 storiesOf('Input', module)
 	.add('Default', () => <Input />)
@@ -43,7 +44,18 @@ storiesOf('Composer', module)
 // 	.add('Right', () => <Bubble position="right" />);
 
 storiesOf('Time', module)
-	.add('Left', () => <Time time="Wed Sep 26 16:09:43 +03 2018" />)
+	.add('Left', () => <Time value="Wed Sep 26 16:09:43 +03 2018" />)
 	.add('Right', () => (
-		<Time time="Wed Sep 26 16:09:43 +03 2018" position="right" />
+		<Time value="Wed Sep 26 16:09:43 +03 2018" position="right" />
+	));
+
+storiesOf('Text', module)
+	.add('Default', () => (
+		<Text value="Eu reprehenderit non esse qui consectetur ullamco id eu enim dolore. Tempor ex pariatur exercitation laborum officia http://nulla proident sunt excepteur reprehenderit sint. Ex ullamco ex irure eiusmod officia. Ut magna velit do sunt.com tempor eiusmod." />
+	))
+	.add('Custom style', () => (
+		<Text
+			value="Eu reprehenderit non esse qui consectetur ullamco id eu enim dolore. Tempor ex pariatur exercitation laborum officia http://nulla proident sunt excepteur reprehenderit sint. Ex ullamco ex irure eiusmod officia. Ut magna velit do sunt.com tempor eiusmod."
+			linkStyle={{ color: 'red' }}
+		/>
 	));
