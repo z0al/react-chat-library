@@ -2,7 +2,7 @@
 
 exports[`should match the snapshot 1`] = `
 <div
-  className="jsx-2762283137 bubble left"
+  className="jsx-1215385579 bubble left"
 >
   <span
     className="text"
@@ -13,7 +13,7 @@ exports[`should match the snapshot 1`] = `
     }
   />
   <span
-    className="jsx-2099417310 left"
+    className="jsx-730365546 left"
     style={Object {}}
   >
     Invalid Date
