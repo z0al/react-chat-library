@@ -49,7 +49,11 @@ storiesOf('Bubble', module)
 
 storiesOf('Time', module)
 	.add('Left', () => <Time>{time}</Time>)
-	.add('Right', () => <Time position="right">{time}</Time>);
+	.add('Right', () => (
+		<Time position="right" style={{ color: 'red' }}>
+			{time}
+		</Time>
+	));
 
 storiesOf('Text', module)
 	.add('Default', () => <Text position="right">{text}</Text>)
