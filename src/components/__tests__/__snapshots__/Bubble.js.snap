@@ -2,15 +2,11 @@
 
 exports[`should match the snapshot 1`] = `
 <div
-  className="jsx-1215385579 bubble left"
+  className="jsx-767130696 bubble left"
 >
   <span
     className="text"
-    style={
-      Object {
-        "color": "black",
-      }
-    }
+    style={Object {}}
   />
   <span
     className="jsx-730365546 left"

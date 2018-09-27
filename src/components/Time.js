@@ -6,7 +6,7 @@ import { format } from 'date-fns';
 
 /**
  * @typedef Props
- * @property {string} children
+ * @property {string} date
  * @property {string} [position]
  * @property {string} [format]
  * @property {object} [style]
@@ -14,7 +14,7 @@ import { format } from 'date-fns';
  */
 const Time = props => (
 	<span className={props.position} style={props.style}>
-		{format(props.children, props.format)}
+		{format(props.date, props.format)}
 		<style jsx>{`
 			span {
 				display: block;
@@ -36,7 +36,7 @@ const Time = props => (
 
 /** @type Props */
 Time.defaultProps = {
-	children: '',
+	date: '',
 	position: 'left',
 	format: 'hh:mm A',
 	style: {}

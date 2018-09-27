@@ -14,6 +14,7 @@ import Bubble from '../src/components/Bubble';
 import Time from '../src/components/Time';
 import Text from '../src/components/Text';
 import Day from '../src/components/Day';
+import Message from '../src/components/Message';
 
 storiesOf('Input', module)
 	.add('Default', () => <Input />)
@@ -42,18 +43,16 @@ storiesOf('Composer', module)
 
 const text =
 	'Eu reprehenderit non esse qui consectetur ullamco id eu enim dolore. Tempor ex pariatur exercitation laborum officia http://nulla proident sunt excepteur reprehenderit sint. Ex ullamco ex irure eiusmod officia. Ut magna velit do sunt.com tempor eiusmod.';
-const time = 'Wed Sep 26 17:08:00 +03 2018';
+const date = 'Wed Sep 26 17:08:00 +03 2018';
 
 storiesOf('Bubble', module)
-	.add('Left', () => <Bubble text={text} time={time} />)
-	.add('Right', () => <Bubble text={text} time={time} position="right" />);
+	.add('Left', () => <Bubble text={text} date={date} />)
+	.add('Right', () => <Bubble text={text} date={date} position="right" />);
 
 storiesOf('Time', module)
-	.add('Left', () => <Time>{time}</Time>)
+	.add('Left', () => <Time date={date} />)
 	.add('Right', () => (
-		<Time position="right" style={{ color: 'red' }}>
-			{time}
-		</Time>
+		<Time position="right" style={{ color: 'red' }} date={date} />
 	));
 
 storiesOf('Text', module)
@@ -62,12 +61,15 @@ storiesOf('Text', module)
 			position="right"
 			style={{ color: 'green' }}
 			linkStyle={{ color: 'green', fontWeight: 'bold' }}
-		>
-			{text}
-		</Text>
+			text={text}
+		/>
 	))
-	.add('Custom style', () => <Text linkStyle={{ color: 'red' }}>{text}</Text>);
+	.add('Custom style', () => <Text linkStyle={{ color: 'red' }} text={text} />);
 
 storiesOf('Day', module)
-	.add('Default', () => <Day>{time}</Day>)
-	.add('Custom style', () => <Day textStyle={{ color: 'red' }}>{time}</Day>);
+	.add('Default', () => <Day date={date} />)
+	.add('Custom style', () => <Day textStyle={{ color: 'red' }} date={date} />);
+
+storiesOf('Message', module)
+	.add('Left', () => <Message text={text} date={date} />)
+	.add('Right', () => <Message text={text} date={date} position="right" />);

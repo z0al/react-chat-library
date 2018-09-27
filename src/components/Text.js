@@ -6,7 +6,7 @@ import { linkifier } from 'react-linkifier';
 
 /**
  * @typedef Props
- * @property {string} children
+ * @property {string} text
  * @property {string} [position]
  * @property {object} [style]
  * @property {object} [linkStyle]
@@ -16,8 +16,8 @@ const Text = props => {
 	const color = props.position === 'left' ? 'black' : 'white';
 
 	return (
-		<span className="text" style={{ color, ...props.style }}>
-			{linkifier(props.children, {
+		<span className="text" style={props.style}>
+			{linkifier(props.text, {
 				style: {
 					color,
 					...props.linkStyle
@@ -30,7 +30,7 @@ const Text = props => {
 /** @type Props */
 Text.defaultProps = {
 	position: 'left',
-	children: '',
+	text: '',
 	style: {},
 	linkStyle: {}
 };
