@@ -15,6 +15,7 @@ import Time from '../src/components/Time';
 import Text from '../src/components/Text';
 import Day from '../src/components/Day';
 import Message from '../src/components/Message';
+import MessageList from '../src/components/MessageList';
 
 storiesOf('Input', module)
 	.add('Default', () => <Input />)
@@ -73,3 +74,20 @@ storiesOf('Day', module)
 storiesOf('Message', module)
 	.add('Left', () => <Message text={text} date={date} />)
 	.add('Right', () => <Message text={text} date={date} position="right" />);
+
+const messages = [
+	{ text: 'Hey', date: 'Thu Sep 27 18:56:12 +03 2018', user: { _id: 2 } },
+	{
+		text: 'Hello friend',
+		date: 'Thu Sep 27 16:56:12 +03 2018',
+		user: { _id: 1 }
+	},
+	{
+		text: 'How are you doing?',
+		date: 'Thu Sep 28 16:56:12 +03 2018',
+		user: { _id: 1 }
+	}
+];
+storiesOf('Message List', module).add('Default', () => (
+	<MessageList messages={messages} user={{ _id: 1 }} />
+));

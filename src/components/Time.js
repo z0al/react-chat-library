@@ -19,7 +19,7 @@ const Time = props => (
 			span {
 				display: block;
 				font-size: 0.65em;
-				margin-top: 0.5em;
+				margin-top: 0.7em;
 				text-align: right;
 			}
 
