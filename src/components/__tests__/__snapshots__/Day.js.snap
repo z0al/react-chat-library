@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match the snapshot 1`] = `
+<div
+  className="jsx-2228099478"
+  style={Object {}}
+>
+  <span
+    className="jsx-2228099478"
+    style={Object {}}
+  >
+    Invalid Date
+  </span>
+</div>
+`;
