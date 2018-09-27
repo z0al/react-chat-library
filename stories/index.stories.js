@@ -13,6 +13,7 @@ import Composer from '../src/components/Composer';
 import Bubble from '../src/components/Bubble';
 import Time from '../src/components/Time';
 import Text from '../src/components/Text';
+import Day from '../src/components/Day';
 
 storiesOf('Input', module)
 	.add('Default', () => <Input />)
@@ -66,3 +67,7 @@ storiesOf('Text', module)
 		</Text>
 	))
 	.add('Custom style', () => <Text linkStyle={{ color: 'red' }}>{text}</Text>);
+
+storiesOf('Day', module)
+	.add('Default', () => <Day>{time}</Day>)
+	.add('Custom style', () => <Day textStyle={{ color: 'red' }}>{time}</Day>);
