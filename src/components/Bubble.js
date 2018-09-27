@@ -10,7 +10,7 @@ import Time from './Time';
 /**
  * @typedef Props
  * @property {string} text
- * @property {string} time
+ * @property {string} date
  * @property {string} [position]
  * @property {{left?: any,right?: any}} [style]
  * @param {Props} props
@@ -20,27 +20,29 @@ const Bubble = props => (
 		className={`bubble ${props.position}`}
 		style={props.style[props.position]}
 	>
-		<Text position={props.position}>{props.text}</Text>
-		<Time position={props.position}>{props.time}</Time>
+		<Text {...props} />
+		<Time {...props} />
 		<style jsx>{`
 			div.bubble {
 				display: inline-flex;
 				flex-direction: column;
 				padding: 0.5em;
 				margin: 0.5em;
-				max-width: 80%;
+				max-width: 70%;
 				border-radius: 1em;
 			}
 			div.bubble.left {
 				align-self: flex-start;
 				border-top-left-radius: 0px;
-				background: #f0f0f0;
-				color: white;
+				background: white;
+				box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+				color: black;
 			}
 			div.bubble.right {
 				align-self: flex-end;
 				background: #007bef;
 				border-top-right-radius: 0px;
+				color: white;
 			}
 		`}</style>
 	</div>
@@ -49,7 +51,7 @@ const Bubble = props => (
 /** @type Props */
 Bubble.defaultProps = {
 	text: '',
-	time: '',
+	date: '',
 	position: 'left',
 	style: {}
 };

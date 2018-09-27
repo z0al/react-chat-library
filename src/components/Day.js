@@ -6,7 +6,7 @@ import { format } from 'date-fns';
 
 /**
  * @typedef Props
- * @property {string} children
+ * @property {string} date
  * @property {string} [format]
  * @property {object} [containerStyle]
  * @property {object} [textStyle]
@@ -14,7 +14,7 @@ import { format } from 'date-fns';
  */
 const Day = props => (
 	<div style={props.containerStyle}>
-		<span style={props.textStyle}>{format(props.children, props.format)}</span>
+		<span style={props.textStyle}>{format(props.date, props.format)}</span>
 		<style jsx>{`
 			div {
 				display: flex;
@@ -36,7 +36,7 @@ const Day = props => (
 
 /** @type Props */
 Day.defaultProps = {
-	children: '',
+	date: '',
 	format: 'MMM D, YYYY',
 	containerStyle: {},
 	textStyle: {}
