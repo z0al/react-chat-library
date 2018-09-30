@@ -2,14 +2,14 @@
 
 exports[`should match the snapshot 1`] = `
 <div
-  className="jsx-1773556262 bubble left"
+  className="jsx-1850958272 bubble left"
 >
   <span
     className="text"
     style={Object {}}
   />
   <div
-    className="jsx-1773556262 meta"
+    className="jsx-1850958272 meta"
   >
     <span
       className="jsx-1805036463 left"

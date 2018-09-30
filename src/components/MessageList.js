@@ -9,19 +9,15 @@ import compareAsc from 'date-fns/compare_asc';
 import Day from './Day';
 import Message from './Message';
 
+/**
+ * @typedef Props
+ * @property {Array} messages
+ * @property {object} user
+ * @property {function} [renderDay]
+ * @property {function} [renderMessage]
+ * @augments {React.Component<Props>}
+ */
 class MessageList extends React.Component {
-	/**
-	 * @typedef Props
-	 * @property {Array} messages
-	 * @property {object} user
-	 * @property {function} [renderDay]
-	 * @property {function} [renderMessage]
-	 * @param {Props} props
-	 */
-	constructor(props) {
-		super(props);
-	}
-
 	isSameUser(user) {
 		return user && this.props.user && this.props.user._id === user._id;
 	}
@@ -52,7 +48,9 @@ class MessageList extends React.Component {
 			// Sent message?
 			const position = this.isSameUser(message.user) ? 'right' : 'left';
 
-			elements.push(<Message {...message} position={position} />);
+			elements.push(
+				<Message {...this.props} {...message} position={position} />
+			);
 		}
 
 		return <li>{elements}</li>;

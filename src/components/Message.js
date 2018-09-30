@@ -12,12 +12,15 @@ import Bubble from './Bubble';
  * @property {string} date
  * @property {object} [user]
  * @property {string} [position]
+ * @property {function} [renderBubble]
  * @param {Props} props
  */
 const Message = props => {
 	return (
 		<div>
-			<Bubble {...props} />
+			{(props.renderBubble && props.renderBubble(props)) || (
+				<Bubble {...props} />
+			)}
 			<style jsx>{`
 				div {
 					display: flex;
