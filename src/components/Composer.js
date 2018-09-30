@@ -17,32 +17,28 @@ import Send from './Send';
  * @property {function} [renderSend]
  * @property {function} [renderInput]
  *
- * @param {Props} props
+ * @augments {React.Component<Props>}
  */
 class Composer extends React.Component {
 	renderSend() {
-		const { alwaysShowSend, text, onSubmit } = this.props;
-		const visible = alwaysShowSend || text.trim().length > 0;
+		const visible =
+			this.props.alwaysShowSend || this.props.text.trim().length > 0;
 
-		const sendProps = { visible, onSubmit };
+		const props = { ...this.props, visible };
 
 		if (this.props.renderSend) {
-			return this.props.renderSend(sendProps);
+			return this.props.renderSend(props);
 		}
 
-		return <Send {...sendProps} />;
+		return <Send {...props} />;
 	}
 
 	renderInput() {
-		const { text, onSubmit, onTextChange, submitOnEnter } = this.props;
-
-		const inputProps = { text, onSubmit, onTextChange, submitOnEnter };
-
 		if (this.props.renderInput) {
-			return this.props.renderInput(inputProps);
+			return this.props.renderInput(this.props);
 		}
 
-		return <Input {...inputProps} />;
+		return <Input {...this.props} />;
 	}
 
 	render() {
