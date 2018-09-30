@@ -23,7 +23,7 @@ const Input = props => (
 			data-testid={'text-input'}
 			wrap="soft"
 			rows={1}
-			defaultValue={props.text}
+			value={props.text}
 			placeholder={props.placeholder}
 			onChange={e => {
 				const input = e.target;
@@ -35,6 +35,7 @@ const Input = props => (
 			onKeyDown={e => {
 				// Enter key pressed without shift combination
 				if (props.submitOnEnter && e.keyCode === 13 && !e.shiftKey) {
+					e.preventDefault();
 					props.onSubmit();
 				}
 			}}
