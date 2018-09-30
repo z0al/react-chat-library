@@ -80,16 +80,21 @@ const messages = [
 	{
 		text: 'Hello friend',
 		date: 'Thu Sep 27 16:56:12 +03 2018',
+		sent: true,
+		received: true,
 		user: { _id: 1 }
 	},
 	{
 		text: 'How are you doing?',
 		date: 'Thu Sep 28 16:56:12 +03 2018',
+		sent: true,
+		received: true,
 		user: { _id: 1 }
 	},
 	{
 		text: 'Hello?',
 		date: 'Thu Sep 28 16:57:12 +03 2018',
+		sent: true,
 		user: { _id: 1 }
 	}
 ];

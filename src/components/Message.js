@@ -10,6 +10,7 @@ import Bubble from './Bubble';
  * @typedef Props
  * @property {string} text
  * @property {string} date
+ * @property {object} [user]
  * @property {string} [position]
  * @param {Props} props
  */
@@ -31,7 +32,8 @@ const Message = props => {
 Message.defaultProps = {
 	position: 'left',
 	text: '',
-	date: ''
+	date: '',
+	user: {}
 };
 
 export default Message;
