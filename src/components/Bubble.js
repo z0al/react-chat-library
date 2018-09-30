@@ -6,11 +6,14 @@ import React from 'react';
 // Ours
 import Text from './Text';
 import Time from './Time';
+import Ticks from './Ticks';
 
 /**
  * @typedef Props
  * @property {string} text
  * @property {string} date
+ * @property {boolean} [sent]
+ * @property {boolean} [received]
  * @property {string} [position]
  * @property {{left?: any,right?: any}} [style]
  * @param {Props} props
@@ -21,7 +24,10 @@ const Bubble = props => (
 		style={props.style[props.position]}
 	>
 		<Text {...props} />
-		<Time {...props} />
+		<div className="meta">
+			<Time {...props} />
+			{props.position === 'right' && <Ticks {...props} />}
+		</div>
 		<style jsx>{`
 			div.bubble {
 				display: inline-flex;
@@ -43,6 +49,11 @@ const Bubble = props => (
 				background: #007bef;
 				border-top-right-radius: 0px;
 				color: white;
+			}
+			div.meta {
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-end;
 			}
 		`}</style>
 	</div>

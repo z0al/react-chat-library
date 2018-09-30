@@ -2,17 +2,21 @@
 
 exports[`should match the snapshot 1`] = `
 <div
-  className="jsx-576708704 bubble left"
+  className="jsx-1773556262 bubble left"
 >
   <span
     className="text"
     style={Object {}}
   />
-  <span
-    className="jsx-1805036463 left"
-    style={Object {}}
+  <div
+    className="jsx-1773556262 meta"
   >
-    Invalid Date
-  </span>
+    <span
+      className="jsx-1805036463 left"
+      style={Object {}}
+    >
+      Invalid Date
+    </span>
+  </div>
 </div>
 `;
