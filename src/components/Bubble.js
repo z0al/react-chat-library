@@ -27,8 +27,7 @@ const Bubble = props => (
 				display: inline-flex;
 				flex-direction: column;
 				padding: 0.5em 0.7em;
-				margin: 0.5em;
-				min-width: 10%;
+				margin: 0.25em 0.5em;
 				max-width: 70%;
 				border-radius: 1em;
 			}

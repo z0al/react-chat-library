@@ -86,6 +86,11 @@ const messages = [
 		text: 'How are you doing?',
 		date: 'Thu Sep 28 16:56:12 +03 2018',
 		user: { _id: 1 }
+	},
+	{
+		text: 'Hello?',
+		date: 'Thu Sep 28 16:57:12 +03 2018',
+		user: { _id: 1 }
 	}
 ];
 storiesOf('Message List', module).add('Default', () => (
