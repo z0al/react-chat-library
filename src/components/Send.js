@@ -6,8 +6,9 @@ import React from 'react';
 /**
  * @typedef Props
  * @property {string} [label]
+ * @property {string} [text]
  * @property {boolean} [disabled]
- * @property {boolean} [visible]
+ * @property {boolean} [alwaysShowSend]
  * @property {object} [containerStyle]
  * @property {object} [buttonStyle]
  * @property {function} [onSubmit]
@@ -25,7 +26,9 @@ const Send = props => (
 		</button>
 		<style jsx>{`
 			div {
-				display: ${props.visible ? 'flex' : 'none'};
+				display: ${props.alwaysShowSend || props.text.trim().length > 0
+					? 'flex'
+					: 'none'};
 			}
 
 			button {
@@ -49,9 +52,9 @@ const Send = props => (
 
 /** @type Props */
 Send.defaultProps = {
+	text: '',
 	label: '+',
 	disabled: false,
-	visible: true,
 	containerStyle: {},
 	buttonStyle: {},
 	onSubmit: () => {}
