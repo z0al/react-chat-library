@@ -4,14 +4,13 @@
 import React from 'react';
 
 // Ours
+import { prepare } from '../utils';
 import Input from './Input';
 import Send from './Send';
 
 /**
  * @typedef Props
- * @property {string} [text]
  * @property {object} [style]
- * @property {boolean} [alwaysShowSend]
  * @property {boolean} [submitOnEnter]
  * @property {function} [onSubmit]
  * @property {function} [onTextChange]
@@ -22,24 +21,19 @@ import Send from './Send';
  */
 class Composer extends React.Component {
 	renderSend() {
-		const visible =
-			this.props.alwaysShowSend || this.props.text.trim().length > 0;
-
-		const props = { ...this.props, visible };
-
 		if (this.props.renderSend) {
-			return this.props.renderSend(props);
+			return this.props.renderSend(prepare(this.props));
 		}
 
-		return <Send {...props} />;
+		return <Send {...prepare(this.props)} />;
 	}
 
 	renderInput() {
 		if (this.props.renderInput) {
-			return this.props.renderInput(this.props);
+			return this.props.renderInput(prepare(this.props));
 		}
 
-		return <Input {...this.props} />;
+		return <Input {...prepare(this.props)} />;
 	}
 
 	render() {
@@ -60,9 +54,7 @@ class Composer extends React.Component {
 
 /** @type Props */
 Composer.defaultProps = {
-	text: '',
 	style: {},
-	alwaysShowSend: true,
 	submitOnEnter: true,
 	onSubmit: () => {},
 	onTextChange: () => {}

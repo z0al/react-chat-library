@@ -4,6 +4,7 @@
 import React from 'react';
 
 // Ours
+import { prepare } from '../utils';
 import Text from './Text';
 import Time from './Time';
 import Ticks from './Ticks';
@@ -24,16 +25,16 @@ import Ticks from './Ticks';
 class Bubble extends React.Component {
 	renderText() {
 		if (this.props.renderText) {
-			return this.props.renderText(this.props);
+			return this.props.renderText(prepare(this.props));
 		}
-		return <Text {...this.props} />;
+		return <Text {...prepare(this.props)} />;
 	}
 
 	renderTime() {
 		if (this.props.renderTime) {
-			return this.props.renderTime(this.props);
+			return this.props.renderTime(prepare(this.props));
 		}
-		return <Time {...this.props} />;
+		return <Time {...prepare(this.props)} />;
 	}
 
 	renderTicks() {
@@ -42,10 +43,10 @@ class Bubble extends React.Component {
 		}
 
 		if (this.props.renderTicks) {
-			return this.props.renderTicks(this.props);
+			return this.props.renderTicks(prepare(this.props));
 		}
 
-		return <Ticks {...this.props} />;
+		return <Ticks {...prepare(this.props)} />;
 	}
 
 	render() {

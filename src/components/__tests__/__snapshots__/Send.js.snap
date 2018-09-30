@@ -2,18 +2,18 @@
 
 exports[`should match the snapshot 1`] = `
 <div
-  className="jsx-2464195997"
+  className="jsx-3725816649"
   style={Object {}}
 >
   <button
-    className="jsx-2464195997"
+    className="jsx-3725816649"
     disabled={false}
     onClick={[Function]}
     style={Object {}}
     type="button"
   >
     <span
-      className="jsx-2464195997"
+      className="jsx-3725816649"
     >
       +
     </span>
