@@ -8,13 +8,12 @@ import { format } from 'date-fns';
  * @typedef Props
  * @property {string} date
  * @property {string} [position]
- * @property {string} [format]
  * @property {object} [style]
  * @param {Props} props
  */
 const Time = props => (
 	<span className={props.position} style={props.style}>
-		{format(props.date, props.format)}
+		{format(props.date, 'hh:mm A')}
 		<style jsx>{`
 			span {
 				display: block;
@@ -38,7 +37,6 @@ const Time = props => (
 Time.defaultProps = {
 	date: '',
 	position: 'left',
-	format: 'hh:mm A',
 	style: {}
 };
 

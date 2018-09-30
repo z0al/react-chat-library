@@ -50,7 +50,7 @@ class Composer extends React.Component {
 				<style jsx>{`
 					div {
 						display: flex;
-						margin-top: 2rem;
+						margin-top: 1rem;
 					}
 				`}</style>
 			</div>
