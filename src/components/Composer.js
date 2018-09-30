@@ -10,6 +10,7 @@ import Send from './Send';
 /**
  * @typedef Props
  * @property {string} [text]
+ * @property {object} [style]
  * @property {boolean} [alwaysShowSend]
  * @property {boolean} [submitOnEnter]
  * @property {function} [onSubmit]
@@ -43,12 +44,13 @@ class Composer extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div style={this.props.style}>
 				{this.renderInput()}
 				{this.renderSend()}
 				<style jsx>{`
 					div {
 						display: flex;
+						margin-top: 2rem;
 					}
 				`}</style>
 			</div>
@@ -59,6 +61,7 @@ class Composer extends React.Component {
 /** @type Props */
 Composer.defaultProps = {
 	text: '',
+	style: {},
 	alwaysShowSend: true,
 	submitOnEnter: true,
 	onSubmit: () => {},
