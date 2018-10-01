@@ -2,7 +2,7 @@
 
 exports[`should match the snapshot 1`] = `
 <span
-  className="text"
+  className="jsx-895878529 text"
   style={Object {}}
 />
 `;

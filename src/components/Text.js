@@ -23,6 +23,11 @@ const Text = props => {
 					...props.linkStyle
 				}
 			})}
+			<style jsx>{`
+				span {
+					white-space: pre;
+				}
+			`}</style>
 		</span>
 	);
 };
