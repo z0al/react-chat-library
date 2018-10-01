@@ -23,6 +23,7 @@ const Input = props => (
 			data-testid={'text-input'}
 			wrap="soft"
 			rows={1}
+			autoFocus={true}
 			value={props.text}
 			placeholder={props.placeholder}
 			onChange={e => {
