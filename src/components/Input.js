@@ -38,6 +38,10 @@ const Input = props => (
 				if (props.submitOnEnter && e.keyCode === 13 && !e.shiftKey) {
 					e.preventDefault();
 					props.onSubmit();
+
+					// We need to call resize manually here. On change won't be called
+					// Due to e.preventDefault
+					resize.destroy(e.currentTarget);
 				}
 			}}
 		/>
