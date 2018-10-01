@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match the snapshot 1`] = `
+<div
+  className="jsx-3737022624"
+  style={Object {}}
+>
+  <ul
+    className="jsx-2992020076"
+  />
+  <div
+    className="jsx-593056877"
+    style={Object {}}
+  >
+    <div
+      className="jsx-233852188"
+      style={Object {}}
+    >
+      <textarea
+        className="jsx-233852188"
+        data-testid="text-input"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Type a message"
+        rows={1}
+        style={Object {}}
+        value=""
+        wrap="soft"
+      />
+    </div>
+    <div
+      className="jsx-3725816649"
+      style={Object {}}
+    >
+      <button
+        className="jsx-3725816649"
+        disabled={false}
+        onClick={[Function]}
+        style={Object {}}
+        type="button"
+      >
+        <span
+          className="jsx-3725816649"
+        >
+          +
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

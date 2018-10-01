@@ -59,10 +59,10 @@ const Input = props => (
 				resize: none;
 				border: none;
 				outline: none;
-				max-height: ${props.lines * 1}rem;
+				max-height: ${props.lines * 1.2}rem;
 				line-height: 1rem;
-				height: 1rem;
-				font-size: 0.8rem;
+				height: 1.2rem;
+				font-size: 1em;
 				font-family: inherit;
 			}
 		`}</style>

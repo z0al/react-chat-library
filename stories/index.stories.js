@@ -16,6 +16,7 @@ import Text from '../src/components/Text';
 import Day from '../src/components/Day';
 import Message from '../src/components/Message';
 import MessageList from '../src/components/MessageList';
+import Messenger from '../src/components/Messenger';
 
 storiesOf('Input', module)
 	.add('Default', () => <Input />)
@@ -100,4 +101,22 @@ const messages = [
 ];
 storiesOf('Message List', module).add('Default', () => (
 	<MessageList messages={messages} user={{ _id: 1 }} />
+));
+
+storiesOf('Messenger', module).add('Default', () => (
+	<Messenger
+		messages={messages}
+		alwaysShowSend={true}
+		user={{ _id: 1 }}
+		onSend={text => {
+			messages.push({
+				text,
+				user: { _id: 1 },
+				date: Date(),
+				sent: true,
+				received: true
+			});
+		}}
+		onTextChange={action('TextChange')}
+	/>
 ));

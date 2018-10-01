@@ -65,10 +65,14 @@ class MessageList extends React.Component {
 						ul {
 							display: flex;
 							flex-direction: column;
+							flex-grow: 1;
+							overflow-x: hidden;
+							overflow-y: auto;
 							background: white;
 							list-style-type: none;
 							margin: 0;
 							padding: 0;
+							height: 0;
 						}
 
 						li {
