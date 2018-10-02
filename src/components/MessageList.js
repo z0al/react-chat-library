@@ -3,9 +3,9 @@
 // Packages
 import React from 'react';
 import isSameDay from 'date-fns/is_same_day';
-import compareAsc from 'date-fns/compare_asc';
 
 // Ours
+import { sortMessages } from '../utils';
 import Day from './Day';
 import Message from './Message';
 
@@ -23,7 +23,7 @@ class MessageList extends React.Component {
 	}
 
 	sortMessages() {
-		return this.props.messages.sort((m1, m2) => compareAsc(m1.date, m2.date));
+		return sortMessages(this.props.messages);
 	}
 
 	renderDay(date) {
