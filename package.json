@@ -1,8 +1,9 @@
 {
 	"name": "react-chat-stuff",
 	"version": "0.1.0",
-	"main": "index.js",
 	"license": "MIT",
+	"main": "./lib/index.js",
+	"module": "./lib/index.esm.js",
 	"peerDependencies": {
 		"react": "^16.5.1"
 	},
@@ -24,10 +25,15 @@
 		"react": "^16.5.1",
 		"react-dom": "^16.5.1",
 		"react-test-renderer": "^16.5.2",
-		"react-testing-library": "^5.1.0"
+		"react-testing-library": "^5.1.0",
+		"rollup": "^0.66.2",
+		"rollup-plugin-babel": "^4.0.3",
+		"rollup-plugin-commonjs": "^9.1.8",
+		"rollup-plugin-node-resolve": "^3.4.0"
 	},
 	"scripts": {
 		"start": "start-storybook -p 6006",
+		"build": "NODE_ENV=production rollup -c",
 		"test": "jest"
 	},
 	"dependencies": {
