@@ -1,9 +1,12 @@
 {
-	"name": "react-chat-stuff",
+	"name": "react-simple-chat",
 	"version": "0.1.0",
 	"license": "MIT",
 	"main": "./lib/index.js",
 	"module": "./lib/index.esm.js",
+	"files": [
+		"lib"
+	],
 	"peerDependencies": {
 		"react": "^16.5.1"
 	},
@@ -34,6 +37,7 @@
 	"scripts": {
 		"start": "start-storybook -p 6006",
 		"build": "NODE_ENV=production rollup -c",
+		"prepublish": "npm run build",
 		"test": "jest"
 	},
 	"dependencies": {
