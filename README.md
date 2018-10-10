@@ -1,4 +1,4 @@
-# React Chat Stuff
+# React Chat Library
 
 Customizable React chat components written for the web.
 
