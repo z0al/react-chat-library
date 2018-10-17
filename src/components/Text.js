@@ -25,7 +25,7 @@ const Text = props => {
 			})}
 			<style jsx>{`
 				span {
-					white-space: pre;
+					white-space: pre-wrap;
 				}
 			`}</style>
 		</span>
