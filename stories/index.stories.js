@@ -52,8 +52,8 @@ storiesOf('Bubble', module)
 	.add('Right', () => <Bubble text={text} date={date} position="right" />);
 
 storiesOf('Time', module)
-	.add('Left', () => <Time date={date} />)
-	.add('Right', () => (
+	.add('Default', () => <Time date={date} />)
+	.add('Custom style', () => (
 		<Time position="right" style={{ color: 'red' }} date={date} />
 	));
 
