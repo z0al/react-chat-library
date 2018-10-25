@@ -52,8 +52,8 @@ storiesOf('Bubble', module)
 	.add('Right', () => <Bubble text={text} date={date} position="right" />);
 
 storiesOf('Time', module)
-	.add('Left', () => <Time date={date} />)
-	.add('Right', () => (
+	.add('Default', () => <Time date={date} />)
+	.add('Custom style', () => (
 		<Time position="right" style={{ color: 'red' }} date={date} />
 	));
 
@@ -99,8 +99,15 @@ const messages = [
 		user: { _id: 1 }
 	}
 ];
-storiesOf('Message List', module).add('Default', () => (
-	<MessageList messages={messages} user={{ _id: 1 }} />
+storiesOf('Message List', module).add('Default', () => (<div>
+	<MessageList messages={messages} user={{ _id: 1 }} /><style jsx>{`
+					div {
+						display: flex;
+						flex: 1;
+						flex-direction: column;
+						height: 600px;
+					}
+				`}</style></div>
 ));
 
 storiesOf('Messenger', module).add('Default', () => (
